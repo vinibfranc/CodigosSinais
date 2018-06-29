@@ -1,4 +1,4 @@
-#fft por Vinicius Franceschi
+#dft por Vinicius Franceschi
 
 clear all;
 
