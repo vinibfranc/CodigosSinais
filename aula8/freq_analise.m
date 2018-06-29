@@ -1,0 +1,11 @@
+n = 0:99;
+fs = 200;
+Ts=1/fs;
+x=cos(2*pi*20*n*Ts + pi/4) + 3*cos(2*pi*40*n*Ts - 2*pi/5) + 2*cos(2*pi*60*n*Ts+ pi/8);
+X = fft(x);
+m = 0:length(X) - 1;
+subplot(3, 1, 1); stem(x); xlabel('n');ylabel('x(n)');title('Sequencia');
+subplot(3, 1, 2); stem(m*fs/length(X), abs(X), 'b'); ylabel('magnitude');
+xlabel('frequencia (Hz)'); title('Magnitude da Resposta em Frequencia');
+subplot(3,1,3); stem(m*fs/length(X), angle(X), 'b'); ylabel('Angulo');
+xlabel('frequencia (Hz)'); title('Fase');
